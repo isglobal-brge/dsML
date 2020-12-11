@@ -9,7 +9,7 @@
 #' @examples
 prepare_dataset_treeDS <- function(object, questions){
   
-  questions <- unserialize(questions)
+  questions <- unserialize(wkb::hex2raw(questions))
   
   for(i in 1:nrow(questions)){
     if(questions[i,4] == "numerical"){
