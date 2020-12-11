@@ -2,7 +2,8 @@ AssignMethods:
   centerDS,
   kmeans.assign_resultDS,
   scaleDS,
-  subset_typeDS
+  subset_typeDS,
+  prepare_dataset_treeDS
 AggregateMethods:
   kmeansDS,
   knnDS,
