@@ -50,7 +50,7 @@ prepare_dataset_treeDS <- function(object, questions){
   
   if(subset.size < nfilter.subset){
     studysideMessage<-"Subset to be created is too small (<nfilter.subset)"
-    return(list(studysideMessage=studysideMessage))
+    stop(list(studysideMessage=studysideMessage))
   }
   
   return(object)
