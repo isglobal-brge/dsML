@@ -30,6 +30,7 @@ prepare_dataset_treeDS <- function(object, questions){
         object <- object[object[[questions[i,2]]] != value, ]
       }
     }
+    object <- object[, !(names(object) %in% questions[i,2])]
   }
   return(object)
 }
