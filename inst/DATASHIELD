@@ -3,9 +3,12 @@ AssignMethods:
   kmeans.assign_resultDS,
   scaleDS,
   subset_typeDS,
-  prepare_dataset_treeDS
+  prepare_dataset_treeDS,
+  dummiesDS,
+  dummies_transformationDS
 AggregateMethods:
   kmeansDS,
   knnDS,
   scatterPlotGGDS,
-  svdDS
+  svdDS,
+  dummy_probabilityDS
