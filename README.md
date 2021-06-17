@@ -42,15 +42,15 @@ devtools::install_github('isglobal-brge/dsML@v1.0.5')
 
 * Non-disclosive Machine learning functions.
 
-* INTRODUCIR LINK
+* https://htmlpreview.github.io/?https://github.com/isglobal-brge/dsMLClient/blob/main/vignettes/dsML_vignette.html
 
 # Acknowledgements
 
-We acknowledge the help and support of Yannick Marcon and the DataSHIELD technical team.
+We acknowledge the help and support of the DataSHIELD technical team.
 
 # Contact
 
-* Juan R. Gonzalez, Xavier Escriba-Montagut and Yannick Marcon
+* Juan R. Gonzalez and Xavier Escriba-Montagut
 
 * juanr.gonzalez@isglobal.org
 
