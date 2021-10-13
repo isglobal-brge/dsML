@@ -22,7 +22,7 @@ kmeans.assign_resultDS <- function(x, ...){
   #nfilter.stringShort <- as.numeric(thr$nfilter.stringShort) #
   #nfilter.kNN <- as.numeric(thr$nfilter.kNN)                  #
   #nfilter.noise <- as.numeric(thr$nfilter.noise)              #
-  nfilter.levels <- as.numeric(thr$nfilter.levels)           #
+  nfilter.levels <- as.numeric(thr$nfilter.levels.max)           #
   #############################################################
   
   dots <- unlist(list(...))

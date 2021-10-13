@@ -1,7 +1,7 @@
 Package: dsML
 Title: DataSHIELD server site machine learning functions.
-Version: 0.9
 Authors@R: c(person("Xavier", "Escribà-Montagut", , "xavier.escriba@isglobal.org", role = c("aut", "cre")))
+Version: 0.91
 Description: What the package does (one paragraph).
 License: MIT
 Encoding: UTF-8

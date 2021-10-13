@@ -16,6 +16,18 @@
 #' @export
 
 kmeansDS <- function(x, ...){
+  ##############################################################
+  # CAPTURE THE nfilter SETTINGS                               #
+  thr <- listDisclosureSettingsDS()                            #
+  #nfilter.tab <- as.numeric(thr$nfilter.tab)                  #
+  #nfilter.glm <- as.numeric(thr$nfilter.glm)                  #
+  #nfilter.subset <- as.numeric(thr$nfilter.subset)            #
+  #nfilter.string <- as.numeric(thr$nfilter.string)            #
+  #nfilter.stringShort <- as.numeric(thr$nfilter.stringShort)  #
+  #nfilter.kNN <- as.numeric(thr$nfilter.kNN)                  #
+  #nfilter.noise <- as.numeric(thr$nfilter.noise)              #
+  nfilter.levels <- as.numeric(thr$nfilter.levels.density)     #
+  ##############################################################
   
   # Check 'x' for NAs, this algorithm does not work with NAs in the dataset
   if(any(is.na(x))){
@@ -28,6 +40,12 @@ kmeansDS <- function(x, ...){
   dots <- unlist(list(...))
   nvar <- ncol(x)
   centroids <- t(matrix(dots, nrow = nvar))
+  
+  # Check for the number of centroids to calculate in relation to the number of individuals on the x table,
+  # if it surpasses the allowed density, throw error
+  if(nrow(centroids)/nrow(x) > nfilter.levels){
+    stop('The relation of individuals/centroids is larger than the allowed threshold [', nfilter.levels, ']')
+  }
   
   # Get distances matrix, which contains the distances between the centroids and each datapoint on 'x'
   distances <- matrix(0, nrow = nrow(centroids), ncol = nrow(x))
