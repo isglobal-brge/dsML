@@ -30,7 +30,7 @@ knnDS <- function(x, neigh, classificator_name, method.indicator, k, noise, ...)
   #nfilter.stringShort <- as.numeric(thr$nfilter.stringShort) #
   nfilter.kNN <- as.numeric(thr$nfilter.kNN)                  #
   nfilter.noise <- as.numeric(thr$nfilter.noise)              #
-  nfilter.levels <- as.numeric(thr$nfilter.levels)            #
+  nfilter.levels <- as.numeric(thr$nfilter.levels.max)        #
   #############################################################
   
   # Check 'x' for NAs, this algorithm does not work with NAs in the dataset
