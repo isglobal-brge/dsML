@@ -9,7 +9,7 @@
 #' @return \code{data frame} Subsetted table
 #' @export
 
-subset_typeDS <- function(table, type){
+subset_by_typeDS <- function(table, type){
   
   n_cols <- ncol(table)
   

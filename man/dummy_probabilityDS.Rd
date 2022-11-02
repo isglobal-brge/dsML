@@ -9,9 +9,6 @@ dummy_probabilityDS(x)
 \arguments{
 \item{x}{}
 }
-\value{
-
-}
 \description{
 Title
 }

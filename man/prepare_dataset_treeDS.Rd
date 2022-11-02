@@ -11,9 +11,6 @@ prepare_dataset_treeDS(object, questions)
 
 \item{questions}{}
 }
-\value{
-
-}
 \description{
 Title
 }
