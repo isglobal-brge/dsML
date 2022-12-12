@@ -12,7 +12,7 @@ centerDS <- function(table, ...){
 
   dots <- unlist(list(...))
   
-  if(class(table)  == "numeric"){
+  if(all(c("numeric") %in% class(table))){
     # Integrity check
     if(length(dots) != 1){
       stop("Too many dot arguments passed, only one needed")

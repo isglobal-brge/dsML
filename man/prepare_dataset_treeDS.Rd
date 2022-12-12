@@ -7,12 +7,12 @@
 prepare_dataset_treeDS(object, questions)
 }
 \arguments{
-\item{object}{}
+\item{object}{basis of dataset tree}
 
-\item{questions}{}
+\item{questions}{criterion for preperation}
 }
 \value{
-
+the prepared dataset tree
 }
 \description{
 Title

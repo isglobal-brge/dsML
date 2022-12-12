@@ -18,7 +18,7 @@
 kmeansDS <- function(x, ...){
   ##############################################################
   # CAPTURE THE nfilter SETTINGS                               #
-  thr <- listDisclosureSettingsDS()                            #
+  thr <- dsBase::listDisclosureSettingsDS()                    #
   #nfilter.tab <- as.numeric(thr$nfilter.tab)                  #
   #nfilter.glm <- as.numeric(thr$nfilter.glm)                  #
   #nfilter.subset <- as.numeric(thr$nfilter.subset)            #
@@ -50,7 +50,7 @@ kmeansDS <- function(x, ...){
   # Get distances matrix, which contains the distances between the centroids and each datapoint on 'x'
   distances <- matrix(0, nrow = nrow(centroids), ncol = nrow(x))
   for(i in 1:nrow(centroids)){
-    distances[i,] <- t(as.matrix(dist(rbind(centroids[i,], x)))[-1,1])
+    distances[i,] <- t(as.matrix(stats::dist(rbind(centroids[i,], x)))[-1,1])
   }
     # Get index of minimums (index corresponds to which centroid is closer to each point)
   assignations <- apply(distances, 2, which.min)
@@ -59,9 +59,9 @@ kmeansDS <- function(x, ...){
   
   # Get the new centroids by getting the mean of each variable for each cluster. Calculate also the
   # number of points on each cluster
-  new_means <- aggregate(x, list(x$assignations), mean)
+  new_means <- stats::aggregate(x, list(x$assignations), mean)
   cluster_centers <- new_means[,1:(nvar+1)]
-  cluster_numbers <- aggregate(x, list(x$assignations), length)[,1:2]
+  cluster_numbers <- stats::aggregate(x, list(x$assignations), length)[,1:2]
   colnames(cluster_numbers) <- c("assignations","count")
     # Sometimes if one of the centroids passed to this function is too far, the points get classified
     # only on the other centroids, the following if clauses serve to check for that. When a centroid did
@@ -80,6 +80,7 @@ kmeansDS <- function(x, ...){
       cluster_centers <- rbind(cluster_centers, c(i, t(centroids[i,])))
     }
   }
+  Group.1 <- NULL
   data.table::setorder(cluster_centers, Group.1)
   
   # Return new centroids, assigned points to each centroid and the assignations vector

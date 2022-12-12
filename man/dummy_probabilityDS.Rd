@@ -7,10 +7,10 @@
 dummy_probabilityDS(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{basis for dummy probability}
 }
 \value{
-
+the dummy probability
 }
 \description{
 Title
