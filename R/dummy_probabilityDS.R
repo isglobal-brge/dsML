@@ -1,14 +1,13 @@
 #' Title
 #'
-#' @param x 
+#' @param x basis for dummy probability
 #'
-#' @return
+#' @return the dummy probability
 #' @export
 #'
-#' @examples
 dummy_probabilityDS <- function(x){
   
-  thr <- listDisclosureSettingsDS()
+  thr <- dsBase::listDisclosureSettingsDS()
   nfilter.subset <- as.numeric(thr$nfilter.subset)
   
   if(nrow(x) < nfilter.subset){stop("Subset is too small")}

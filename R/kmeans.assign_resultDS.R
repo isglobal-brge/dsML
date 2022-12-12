@@ -14,15 +14,15 @@
 kmeans.assign_resultDS <- function(x, ...){
   #############################################################
   # MODULE 1: CAPTURE THE nfilter SETTINGS                    #
-  thr <- listDisclosureSettingsDS()                         #
+  thr <- dsBase::listDisclosureSettingsDS()                   #
   #nfilter.tab <- as.numeric(thr$nfilter.tab)                 #
   #nfilter.glm <- as.numeric(thr$nfilter.glm)                 #
   #nfilter.subset <- as.numeric(thr$nfilter.subset)           #
   #nfilter.string <- as.numeric(thr$nfilter.string)           #
   #nfilter.stringShort <- as.numeric(thr$nfilter.stringShort) #
-  #nfilter.kNN <- as.numeric(thr$nfilter.kNN)                  #
-  #nfilter.noise <- as.numeric(thr$nfilter.noise)              #
-  nfilter.levels <- as.numeric(thr$nfilter.levels.max)           #
+  #nfilter.kNN <- as.numeric(thr$nfilter.kNN)                 #
+  #nfilter.noise <- as.numeric(thr$nfilter.noise)             #
+  nfilter.levels <- as.numeric(thr$nfilter.levels.max)        #
   #############################################################
   
   dots <- unlist(list(...))

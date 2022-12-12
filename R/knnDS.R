@@ -22,7 +22,7 @@ knnDS <- function(x, neigh, classificator_name, method.indicator, k, noise, ...)
   
   #############################################################
   # MODULE 1: CAPTURE THE nfilter SETTINGS                    #
-  thr <- listDisclosureSettingsDS()                           #
+  thr <- dsBase::listDisclosureSettingsDS()                   #
   #nfilter.tab <- as.numeric(thr$nfilter.tab)                 #
   #nfilter.glm <- as.numeric(thr$nfilter.glm)                 #
   #nfilter.subset <- as.numeric(thr$nfilter.subset)           #
@@ -96,7 +96,7 @@ knnDS <- function(x, neigh, classificator_name, method.indicator, k, noise, ...)
   else(stop(paste0("Invalid method: ", method.indicator, ". Methods supported: 'knn' and 'noise'")))
   
   # Get euclidean distance from 'query' to all the datapoints on 'x', correct names and order by distance (ascending)
-  query_distances <- as.matrix(dist(rbind(query, x.non_disclosive)))[-1,1]
+  query_distances <- as.matrix(stats::dist(rbind(query, x.non_disclosive)))[-1,1]
   names(query_distances) <- as.character(1:N.data)
   query_distances_indexes <- order(query_distances)[1:neigh]
   

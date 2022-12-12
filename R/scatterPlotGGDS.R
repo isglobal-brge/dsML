@@ -16,6 +16,7 @@
 #' variables. Thus the function returns always the same noisy data for a given pair of variables.
 #' @param x the name of a numeric vector, the x-variable.
 #' @param y the name of a numeric vector, the y-variable.
+#' @param group the grouping type (which is in the results but not used within the methods body).
 #' @param method.indicator an intiger either 1 or 2. If the user selects the deterministic
 #' method in the client side function the method.inticator is set to 1 while if the user selects
 #' the probabilistic method this argument is set to 2.
@@ -31,7 +32,7 @@ scatterPlotGGDS <- function(x, y, group, method.indicator, k, noise){
   
   #############################################################
   # MODULE 1: CAPTURE THE nfilter SETTINGS                    #
-  thr <- listDisclosureSettingsDS()                         #
+  thr <- dsBase::listDisclosureSettingsDS()                   #
   #nfilter.tab <- as.numeric(thr$nfilter.tab)                 #
   #nfilter.glm <- as.numeric(thr$nfilter.glm)                 #
   #nfilter.subset <- as.numeric(thr$nfilter.subset)           #
@@ -43,7 +44,7 @@ scatterPlotGGDS <- function(x, y, group, method.indicator, k, noise){
   #############################################################
   
   # Check if group is a factor, if not stop execution
-  if(class(group) != "factor"){
+  if(! all(c("factor") %in% class(group))){
     stop("Grouping variable is not of type 'factor'")
   }
   

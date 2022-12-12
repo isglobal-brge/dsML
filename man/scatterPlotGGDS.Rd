@@ -11,6 +11,8 @@ scatterPlotGGDS(x, y, group, method.indicator, k, noise)
 
 \item{y}{the name of a numeric vector, the y-variable.}
 
+\item{group}{the grouping type (which is in the results but not used within the methods body).}
+
 \item{method.indicator}{an intiger either 1 or 2. If the user selects the deterministic
 method in the client side function the method.inticator is set to 1 while if the user selects
 the probabilistic method this argument is set to 2.}

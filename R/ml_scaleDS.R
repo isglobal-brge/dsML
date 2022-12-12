@@ -8,11 +8,11 @@
 #' @return \code{data.frame} or \code{numeric} vector scaled
 #' @export
 
-scaleDS <- function(table, ...){
+ml_scaleDS <- function(table, ...){
   
   dots <- unlist(list(...))
   
-  if(class(table)  == "numeric"){
+  if(all(c("numeric") %in% class(table))){
     # Integrity check
     if(length(dots) != 1){
       stop("Too many dot arguments passed, only one needed")
@@ -34,4 +34,4 @@ scaleDS <- function(table, ...){
   
 }
 # ASSIGN FUNCTION
-# scaleDS
+# ml_scaleDS

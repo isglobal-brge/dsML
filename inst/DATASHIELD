@@ -1,7 +1,7 @@
 AssignMethods:
   centerDS,
   kmeans.assign_resultDS,
-  scaleDS,
+  ml_scaleDS,
   subset_typeDS,
   prepare_dataset_treeDS,
   dummiesDS,

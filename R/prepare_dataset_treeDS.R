@@ -1,24 +1,23 @@
 #' Title
 #'
-#' @param object 
-#' @param questions 
+#' @param object basis of dataset tree
+#' @param questions criterion for preperation
 #'
-#' @return
+#' @return the prepared dataset tree
 #' @export
 #'
-#' @examples
 prepare_dataset_treeDS <- function(object, questions){
   
   #############################################################
   # MODULE 1: CAPTURE THE nfilter SETTINGS                    #
-  thr <- dsBase:::listDisclosureSettingsDS()                           #
+  thr <- dsBase::listDisclosureSettingsDS()                   #
   #nfilter.tab <- as.numeric(thr$nfilter.tab)                 #
   #nfilter.glm <- as.numeric(thr$nfilter.glm)                 #
-  nfilter.subset <- as.numeric(thr$nfilter.subset)           #
+  nfilter.subset <- as.numeric(thr$nfilter.subset)            #
   #nfilter.string <- as.numeric(thr$nfilter.string)           #
   #nfilter.stringShort <- as.numeric(thr$nfilter.stringShort) #
-  # nfilter.kNN <- as.numeric(thr$nfilter.kNN)                  #
-  # nfilter.noise <- as.numeric(thr$nfilter.noise)              #
+  # nfilter.kNN <- as.numeric(thr$nfilter.kNN)                #
+  # nfilter.noise <- as.numeric(thr$nfilter.noise)            #
   #nfilter.levels <- as.numeric(thr$nfilter.levels)           #
   #############################################################
   
