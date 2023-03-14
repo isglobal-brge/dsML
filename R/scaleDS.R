@@ -8,7 +8,7 @@
 #' @return \code{data.frame} or \code{numeric} vector scaled
 #' @export
 
-scale2DS <- function(table, ...){
+ml_scaleDS <- function(table, ...){
   
   dots <- unlist(list(...))
   
